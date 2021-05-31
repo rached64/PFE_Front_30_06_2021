@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title>Login</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <div class="mb-3">
+      <label  class="form-label">Email address</label>
+        <input type="email" formControlName="email" name="email" class="form-control"  aria-describedby="emailHelp"
+        [ngClass]="{'is-invalid':submitted && f.email.errors}">
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">
+          email is required
+        </div>
+        <div *ngIf="f.email.errors.email">
+          email must be  validated eamil !!!!
+        </div>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Password</label>
+      <input type="password" formControlName="password" name="password" class="form-control"
+      [ngClass]="{'is-invalid':submitted && f.password.errors}">
+      <div *ngIf="submitted && f.password.errors " class="invalid-feedback">
+          <div *ngIf="f.password.errors.required ">
+            password is requeired
+          </div>
+
+          <div *ngIf="f.password.errors.minlength">
+            password must be at least 6 caracters
+          </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</ion-content>

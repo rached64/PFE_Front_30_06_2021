@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>  </ion-back-button>
+    </ion-buttons>
+    <ion-title>Recherche Avancé</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <!--
+  <ion-item >
+    <ion-label>Choisissez votre Pays</ion-label>
+    <ion-select class="cat" name="countrie" (ionChange)="getState($event)">
+      <ion-select-option value="{{countrie.id}}" *ngFor="let countrie of countries">
+        {{countrie.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> State</ion-label>
+    <ion-select class="state" name="state">
+      <ion-select-option value="{{state.id}}" *ngFor="let state of states" >
+        {{state.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Cities</ion-label>
+    <ion-select class="citie" name="citie">
+      <ion-select-option value="{{citie.id}}" *ngFor="let citie of cities">
+        {{citie.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>-->
+  <ion-item lines="full">
+    <ion-label> Select Categorie</ion-label>
+    <ion-select (ionChange)="getProdByCat($event)">
+      <ion-select-option value="{{categorie.id}}" *ngFor="let categorie of categories">{{categorie.name}}</ion-select-option>
+    </ion-select>"
+  </ion-item>
+
+    <!-- List of Text Items -->
+    <ion-list *ngFor="let c of post">
+      <ion-item-sliding>
+          <div>
+           <ion-slides pager="true">
+            <ion-slide>
+          <img src="{{c.picture}}" class="card-img-top" alt="">
+          </ion-slide>
+          </ion-slides>
+     
+          <ion-item>
+            <ion-label routerLink="/detail-post/{{c.id}}"> 
+              <h2>{{c.title}}</h2> 
+              <p>{{c.description}}</p> 
+              <h3> {{c.price}}</h3>
+            </ion-label>
+          </ion-item> 
+         
+        </div>
+        </ion-item-sliding>
+        </ion-list>
+</ion-content>

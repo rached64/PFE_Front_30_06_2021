@@ -1,0 +1,149 @@
+<ion-header>
+  <meta meta charset=utf-8>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title>{{annonce.title}}</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col col-12 col-lg-8 col-xl-8>
+    
+        <img src="{{annonce.picture}}" class="card-img-top" alt="">
+    
+    <ion-label class="titre">  <strong> {{annonce.title}} </strong> </ion-label>
+      <ion-label class="info">
+        Herblay-sur-Seine • 2010 • 116000 km • Essence
+      </ion-label>
+        <ion-text>
+          <h1> <strong>{{annonce.price}}  </strong></h1>
+        </ion-text>
+       
+          <ion-label class="criteres">
+            <strong>Critères </strong>
+          </ion-label>
+<ion-card class="card1" size="6">
+      <ion-grid>
+        <ion-row >
+          <ion-col class="box1" col-12 col-md-4 col-lg-4>
+               <ion-label class="box4">marque </ion-label>   <br>
+               <ion-label class="info5">{{annonce.Marque}} </ion-label>  
+
+          </ion-col>
+          <ion-col class="box1" col-12 col-md-4 col-lg-4>
+            <ion-label class="box4">   modele </ion-label> <br>
+          <ion-label class="info5"> {{annonce.Modele}}  </ion-label>  
+         <!--   <ion-input type="text" name="Modele" [(ngModel)]="annonce.Modele"></ion-input>-->
+
+          </ion-col>   
+          <ion-col col-12 col-md-4 col-lg-4 >
+            <div>
+              <ion-label class="box4"> annee de modele</ion-label>   <br>
+             <ion-label class="info5"> {{annonce.AnneeModele}}</ion-label>  
+          <!--    <ion-input type="text" name="title" [(ngModel)]="annonce.AnneeModele"></ion-input>-->
+            </div>
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col  col-12 col-md-4 col-lg-4 >
+            <ion-label class="box4"> kilometrage </ion-label>      <br>
+             <ion-label class="info5"> {{annonce.Kilometrage}} </ion-label> 
+
+     <!--     <ion-input type="text" name="title" [(ngModel)]="annonce.Kilometrage"></ion-input>-->
+
+          </ion-col>
+          <ion-col  col-12 col-md-4 col-lg-4 >
+            <ion-label class="box4">  carburant </ion-label> <br>
+              <ion-label class="info5">  {{annonce.carburant}} </ion-label>
+          <!--  <ion-input type="text" name="title" [(ngModel)]="annonce.carburant"></ion-input>-->
+
+          </ion-col>
+          <ion-col  col-12 col-md-4 col-lg-4 >
+            <ion-label class="box4"> boite de vitesse </ion-label> <br>
+             <ion-label class="info5">  {{annonce.BoiteDeVitesse}}</ion-label> 
+
+        <!--     <ion-input type="text" name="title" [(ngModel)]="annonce.BoiteDeVitesse"></ion-input>-->
+          </ion-col>
+      </ion-row>
+
+        <ion-row>
+            <ion-col  col-12 col-md-4 col-lg-4>
+              <ion-label class="box4">  type d'annonce </ion-label> <br>
+                <ion-label class="info5"> {{annonce.TypePost }}  </ion-label>
+                  
+           <!--     <ion-input type="text" name="title" [(ngModel)]="annonce.TypePost"></ion-input>-->
+            </ion-col>
+            <ion-col col-12 col-md-4 col-lg-4 >
+              <ion-label class="box4"> nombre de porte </ion-label><br>
+                <ion-label class="info5">  {{annonce.NombreDePortes}}  </ion-label><br>
+
+                  
+            <!--    <ion-input type="text" name="title" [(ngModel)]="annonce.NombreDePortes"></ion-input>-->
+            </ion-col>
+            <ion-col  col-12 col-md-4 col-lg-4 >
+              <ion-label class="box4"> nombre de places  </ion-label><br>
+               <ion-label  class="info5">  {{annonce.NombreDePlaces}}</ion-label>
+                        
+           <!--     <ion-input type="text" name="title" [(ngModel)]="annonce.NombreDePlaces"></ion-input>-->
+            </ion-col>
+        </ion-row>
+        
+    
+    <ion-row>
+        <ion-col  col-12 col-md-4 col-lg-4 >
+          <ion-label class="box4">  puissance fiscale  </ion-label><br>
+              <ion-label  class="info5">  {{annonce.PuissanceFiscale}} </ion-label>    
+
+       <!--     <ion-input type="text" name="title" [(ngModel)]="annonce.PuissanceFiscale"></ion-input>-->
+        </ion-col>
+        <ion-col col-12 col-md-4 col-lg-4 >
+          <ion-label class="box4">  cylindre </ion-label><br>
+               <ion-label class="info5"> 1.5 </ion-label>  
+       <!--     <ion-input> 1.5 </ion-input>-->
+        </ion-col>
+        <ion-col  col-12 col-md-4 col-lg-4 >
+          <ion-label class="box4"> etat de véhicule </ion-label><br>
+           <ion-label class="info5">  occasion</ion-label>
+      <!--    <ion-input>ocassion</ion-input>-->
+        </ion-col>
+    </ion-row>
+
+  </ion-grid>
+    </ion-card>
+
+    <ion-label class="description">description</ion-label>
+
+<ion-card>
+      <ion-grid>
+        <ion-row class="desc">
+          {{annonce.description}}
+        </ion-row>
+      </ion-grid>
+</ion-card>
+</ion-col>
+<ion-col>
+
+<ion-grid  col-12 col-sm btn-lg>
+  <ion-row>
+    <ion-col col-12 col-lg-4 col-xl-8>
+        <ion-card>
+        <img src="assets/images/user3.jpg" class="image">
+        <ion-label> Ahmed hamdi </ion-label><br>
+        <ion-label class="site"> site web : www.supercar.com</ion-label>
+        
+    <ion-button   expand="full" class="chat"> CHAT</ion-button>
+    <ion-button   expand="full" class="num" type="button" color="primary num">Afficher Numéro</ion-button>
+
+        </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+
+</ion-content>

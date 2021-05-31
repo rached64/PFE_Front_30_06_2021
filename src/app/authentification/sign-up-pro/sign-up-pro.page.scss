@@ -1,0 +1,31 @@
+ion-content{
+    --ion-background-color:white ;
+
+ h1{ 
+      margin-top: 25%;
+    text-align: center;
+    font-size: xx-large;
+    color: #fe6d17;
+ }
+ h3{
+        margin: 10px;
+        color: #fe6d17;
+    }
+}
+
+ion-item{
+    line-height: 55px;
+}
+.form{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+ion-button{
+    margin-bottom: 30px
+}
+hr{
+    border-top: 1px solid #fe6d17;
+    margin-left: 20px;
+    margin-right: 20px;
+}

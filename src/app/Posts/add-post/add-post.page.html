@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>  </ion-back-button>
+    </ion-buttons>
+    <ion-title>Déposer une annonce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="insertData()" [formGroup]="formPost" (ngSubmit)="saveUser()">
+
+<div *ngIf="step == 1">
+  <!-----------------------Titre ------------->
+  <ion-item>
+    <ion-label position="floating">Titre </ion-label>
+    <ion-input type="text" name="title" formControlName="title"></ion-input>
+    <div *ngIf="title.touched && title.invalid">
+      <small *ngIf="title.errors.required" class="text-danger">title is required</small>
+    </div>
+  </ion-item>
+  <!---------------------------description------------>
+  <ion-item>
+    <ion-label> description </ion-label>
+    <ion-input type="text" name="description"  formControlName="description"></ion-input>
+  </ion-item>
+  <!----------------------------------Price-------------------->
+  <ion-item>
+    <ion-label> Price </ion-label>
+    <ion-input type="number" name="price" formControlName="price"></ion-input>
+  </ion-item>
+  <!---------------------Catégorie---------------->
+ 
+  <ion-item class="categorie" >
+      <ion-label>Choisissez votre catégorie</ion-label>
+      <ion-select class="cat" formControlName="categorie">
+        <ion-select-option  *ngFor="let categorie of categories" >{{categorie.name}}</ion-select-option>
+    
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <!---------------------Type d'Annonce---------------->
+<div  *ngIf="step == 2">
+
+    <ion-radio-group formControlName="type" >
+        <ion-label> <h4> Type d'annonce </h4></ion-label>
+      <ion-item>
+        <ion-label>Offre</ion-label>
+        <ion-radio  name="typePost"   value="offre" ></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Demande</ion-label>
+        <ion-radio  name="typePost" value="demande" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  <!---------------------Marque---------------->
+  <ion-item class="marque">
+    <ion-label> <h4>Choisissez votre marque </h4></ion-label>
+    <ion-select  class="mar" formControlName="marque" >
+      <ion-select-option *ngFor="let item of postData"> {{item.Marque}} </ion-select-option>  
+    </ion-select>
+  </ion-item>
+
+
+<!---------------------Modéle---------------->
+
+    <ion-item class="modele">
+      <ion-label> <h4>Choisissez votre modele </h4></ion-label>
+      <ion-select  class="mod" formControlName="modele">
+        <ion-select-option *ngFor="let item of postData">{{item.Modele}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!---------------------année modéle---------------->
+    <ion-item class="annéeModéle">
+      <ion-label> <h4>Choisissez votre année de modéle </h4></ion-label>
+      <ion-select  class="mod" formControlName="anneeModele" >
+        <ion-select-option *ngFor="let item of postData">{{item.AnneeModele}} </ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+    <!---------------------Date---------------->
+    <ion-item>
+      <ion-label> <h4>Date de premier mise en circulation : </h4> </ion-label>
+      <ion-input formControlName="YearOfRegistration" color="dark" type="text" required></ion-input>
+    </ion-item>
+    <!---------------------Type carburant---------------->
+
+    <ion-radio-group formControlName="carburant">
+      <ion-list-header>
+        <ion-label> <h4> Carburant </h4></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label> <h4>Essence </h4></ion-label>
+        <ion-radio type="radio" id="carburant" name="carburant" value="essance" slot="start"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><h4>Diesel </h4></ion-label>
+        <ion-radio type="radio" id="carburant" name="carburant"  value="diesel" slot="start"></ion-radio>
+      </ion-item>
+      </ion-radio-group>
+
+
+</div>
+ <!---------------------Boite de vitesse---------------->
+ <div  *ngIf="step == 3">
+
+    <ion-radio-group formControlName="BoiteDeVitesse"> 
+      <ion-list-header>
+        <ion-label> <h4>Boite de vitesse </h4>  </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Manuelle</ion-label>
+        <ion-radio value="manuelle" slot="start" id="BoiteDeVitesse" name="BoiteDeVitesse"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Automatique</ion-label>
+        <ion-radio value="automatique" slot="start" id="BoiteDeVitesse" name="BoiteDeVitesse"></ion-radio>
+      </ion-item>
+      </ion-radio-group>
+      <!---------------------Nombre de porte---------------->
+      <ion-item class="">
+        <ion-label>Nombre de porte </ion-label>
+        <input formControlName="nombrePorte">
+      </ion-item>
+
+        <!---------------------Nombre de place---------------->
+        <ion-item class="">
+          <ion-label>Nombre de Place </ion-label>
+          <input formControlName="nombrePlace">
+        </ion-item>
+
+</div> 
+<!---------------------Puissance---------------->
+<div *ngIf="step == 4">
+    <ion-item>
+      <ion-label>Puissance Fiscale</ion-label>
+      <ion-input formControlName="puissanceFiscale" color="dark" type="text" required></ion-input>
+    </ion-item>
+    <!---------------------Puissance---------------->
+    <ion-item>
+      <ion-label>Puissance DIN</ion-label>
+      <ion-input formControlName="puissanceDin"  color="dark" type="text" required></ion-input>
+    </ion-item>
+    <!---------------------Permis---------------->
+
+    <ion-radio-group formControlName="permis">
+      <ion-list-header>
+        <ion-label> <h1> Permis </h1></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Avec Permis</ion-label>
+        <ion-radio value="avecPermis" slot="start" id="permis" name="permis"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sans Permis</ion-label>
+        <ion-radio value="withPermis" slot="start" id="permis" name="permis"></ion-radio>
+      </ion-item>
+      </ion-radio-group>
+    <!---------------------Kilométrage---------------->
+    <ion-item>
+      <ion-label >Kilométrage</ion-label>
+      <ion-input formControlName="kilometrage" color="dark" type="text" required></ion-input>
+    </ion-item>
+    <br>
+  
+</div>
+<!---------------------Button---------------->
+<ion-button type="submit" value="add"  name="add" block *ngIf="step == 4" >Ajouter</ion-button> <!--[disabled]="formPost.invalid"-->
+<ion-button type="button"  *ngIf="step != 1" block (click)="previous()">Previous</ion-button>
+<ion-button type="button" value="next" name="next" block *ngIf="step != 4" (click)="next()">Next</ion-button>
+</form>
+
+</ion-content>

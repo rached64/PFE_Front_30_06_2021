@@ -1,0 +1,56 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>list-categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+-->
+
+
+<!--
+<div class="category ion-padding">
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let categorie of categories">
+     <ion-col>
+    <h4 class="font-bold">{{categorie.name}}</h4>
+      <img src="{{categorie.picture}}" alt="{{categorie.name}}" [routerLink]="['/post-by-categorie',categorie.id]">
+     </ion-col>
+</ion-slide>
+</ion-slides>
+</div>
+-->
+
+<ion-content>
+  <!--
+<ion-grid>
+  <ion-row >
+
+    <ion-col *ngFor="let categorie of categories">
+         <ion-label class="font-bold">{{categorie.name}} </ion-label>  
+         <img src="{{categorie.picture}}" class="image" alt="{{categorie.name}}" [routerLink]="['/post-by-categorie',categorie.id]">
+        </ion-col>
+
+</ion-row>
+</ion-grid>
+-->
+<div class="categoryliste">
+<ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let categorie of categories">
+       
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <ion-img [src]="categorie.picture" [routerLink]="['/post-by-categorie',categorie.id]"></ion-img>
+    </ion-thumbnail>
+    <ion-label>{{categorie.name}}</ion-label>
+  </ion-item>
+    
+</ion-col>
+</ion-row>
+</ion-grid>
+
+</ion-list>
+</div>
+</ion-content>

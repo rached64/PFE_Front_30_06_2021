@@ -1,0 +1,43 @@
+//@import "bootstrap";
+
+ion-content{
+    --ion-background-color:white; 
+}
+ion-toolbar{
+    --background: #fe6d17 ;
+
+}
+
+.image{
+    display: block;
+    margin: 0 auto;
+}
+.text{
+    color:black ;
+}
+.card-body{
+    color: black;
+    background-color: #fe6d17;
+
+}
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+
+ion-img{
+    position: center;
+    width: 70%;
+    height: 50%;
+}

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SAYARA</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<div class="topHeader">
+  <div class="search">
+    <ion-item class="categorie">
+      <ion-label>Choisissez votre catégorie</ion-label>
+      <ion-select class="cat">
+        <ion-select-option></ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-searchbar showCancelButton="focus" [routerLink]="['/search']"></ion-searchbar>
+  </div>
+</div>
+
+<ion-content>
+
+  <div class="ajouter">
+    <ion-button [routerLink]="['/add-post']"> Déposer une annonce </ion-button>
+    </div>
+
+<div class="title ion-padding">
+  <h2>Liste des Categorie</h2>
+      <app-categories (dataCategorie)="HomeCategories($event)">  </app-categories>
+</div>
+<div class="annonce">
+  <h2 class="font-bold">Liste des Annonces</h2>
+  <p [routerLink]="['/post']">See all</p>
+</div>
+ <app-post (dataAnnonce)="HomeFunction($event)"></app-post>
+
+
+</ion-content>
+

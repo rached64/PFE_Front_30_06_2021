@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>PostByCategorie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- List of Text Items -->
+<ion-list *ngFor="let c of post">
+  <ion-item-sliding>
+      <div>
+    
+      <ion-img src="{{c.picture}}" class="card-img-top" alt=""></ion-img>
+   
+      <ion-item>
+        <ion-label routerLink="/detail-post/{{c.id}}"> 
+          <h2>{{c.title}}</h2> 
+          <p>{{c.description}}</p> 
+          <h3> {{c.price}}</h3>
+        </ion-label>
+      </ion-item> 
+     
+    </div>
+    </ion-item-sliding>
+    </ion-list>
+</ion-content>

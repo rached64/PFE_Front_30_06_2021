@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-list>
+    <ion-radio-group value="biff">
+      <ion-list-header>
+        <ion-label> <h1> Créer un compte pour ... </h1></ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Particulier</ion-label>
+        <ion-radio slot="start" value="biff" [routerLink]="['/inscription']"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Mon entreprise</ion-label>
+        <ion-radio slot="start" value="griff" [routerLink]="['/inscription-entreprise']"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+<div class="about-compte">
+  <h4>Vous avez déja un compte ?</h4>
+  <ion-label [routerLink]="['/authentification']">Me connecter</ion-label>
+</div>
+</ion-content>
