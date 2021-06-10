@@ -11,7 +11,6 @@ import { AddPostSimplePage } from './add-post-simple.page';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     AddPostSimplePageRoutingModule,
     FormsModule,

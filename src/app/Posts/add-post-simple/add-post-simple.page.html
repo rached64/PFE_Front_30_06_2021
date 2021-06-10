@@ -6,7 +6,7 @@
 
 <ion-content>
   <h1>Ajouter Annonce :</h1>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="OnImage">
     <div class="form-group">
       <label>titre</label>
       <input formControlName="title" name="title" type="text" class="form-control" id="title" placeholder="Enter titre de votre annonce">
@@ -14,31 +14,40 @@
 
     <div class="form-group">
       <label>Prix</label>
-      <input formControlName="price" type="text" class="form-control" name="pri" id="price" placeholder="Price">
+      <input formControlName="price" type="text" class="form-control" name="price" id="price" placeholder="Price">
     </div>
-<div formGroupName="category_id">
-    <select class="custom-select" formControlName="name">
+    <!--
+<div>
+    <select class="custom-select" formControlName="category_id">
       <option selected >categories</option>
       <option *ngFor="let categorie of categories"  [value]="categorie.name"> {{categorie.name}}</option>
     </select>
+</div>
+--->
+<div class="form-group">
+  <label>category_id</label>
+  <input formControlName="category_id" name="category_id" type="text" class="form-control" id="category_id" placeholder="select">
 </div>
 
     <div class="form-group">
       <label>Description</label>
       <input formControlName="description" name="description" type="text" class="form-control" id="description" placeholder="description">
     </div>
+    <div class="form-group">
+      <input formControlName="user_id" name="user_id" type="text"  id="user_id">
+    </div>
+
 
     <div class="custom-file">
-      <input type="file" name="picture" class="form-control" id="picture" required (change)="uploadImage($event)" [ngClass]="{'is-invalid':submitted && f.picture.errors}">  <!-- -->
+      <input type="file" formControlName="picture" name="picture" class="form-control" id="picture" required (change)="uploadImage($event)" [ngClass]="{'is-invalid':submitted && f.picture.errors}">  <!-- -->
       <div class="image-preview" *ngIf="imagePreview">
      <img [src]="imagePreview" alt="">
       </div>
       <div *ngIf="submitted && f.picture.errors" class="invalid-feedback">
         <div *ngIf="f.picture.errors.required">Image is required</div>
       </div>
-      
     </div>
 
-    <button  type="submit" class="btn btn-primary" expand="block">Ajouter Annonce </button>
+    <button (click)="onSubmit()" type="submit" class="btn btn-primary" expand="block">Ajouter Annonce </button>
   </form>
 </ion-content>

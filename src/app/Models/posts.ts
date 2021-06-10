@@ -1,4 +1,4 @@
-import { Categories } from "./categories";
+import { Categories, ICategories } from "./categories";
 
 export interface IPost {
     id              :number;
@@ -7,7 +7,7 @@ export interface IPost {
     title           :string;     
     description     :string;      
     price           :number;
-    category_id     :Categories ;
+    category_id     :ICategories ;
     Modele          :string;  
     BoiteDeVitesse  :string;     
     AnneeModele     :number;      
@@ -30,7 +30,7 @@ export class Post implements IPost {
     title           :string;     
     description     :string;      
     price           :number;
-    category_id      :Categories ;
+    category_id     :ICategories ;
     Modele          :string;  
     BoiteDeVitesse  :string;     
     AnneeModele     :number;      

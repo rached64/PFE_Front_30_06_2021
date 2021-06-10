@@ -73,8 +73,8 @@ const routes: Routes = [
     loadChildren: () => import('./Posts/add-post-simple/add-post-simple.module').then( m => m.AddPostSimplePageModule)
   },
   {
-    path: 'test',
-    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
  /* {
     path: '**',

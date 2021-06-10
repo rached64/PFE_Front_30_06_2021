@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  status: boolean;
 
   constructor(private http: HttpClient) { }
     HomeFunction($event) { console.log($event) } ;
@@ -14,6 +15,20 @@ export class HomePage implements OnInit {
   
     ngOnInit():void {}
 
+    func() {
+      this.status = !this.status;
+      if (this.status) {
+        alert("Inscription obligatoire !");
+      }
+    }
+    
+    functionAuth(){
+      if(localStorage.getItem('token')==null){
+        return true ;
+      }else{
+        return false ;
+      }
+    }
   
 }
 

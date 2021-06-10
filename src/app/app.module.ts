@@ -1,20 +1,3 @@
-/*import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
-@NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
-})
-export class AppModule {}*/
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {  RouteReuseStrategy } from '@angular/router';
@@ -29,6 +12,8 @@ import { CategoriesService } from './services/categories.service';
 import { PostsService } from './services/posts.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
 
 
 @NgModule({
@@ -43,7 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,    
     ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },CategoriesService,PostsService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },CategoriesService,PostsService,NativeStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

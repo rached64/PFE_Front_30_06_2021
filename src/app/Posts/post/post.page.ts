@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { interval, Observable, Subscription } from 'rxjs';
 import { IPost } from 'src/app/Models/posts';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -11,6 +11,7 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./post.page.scss'],
 })
 export class PostPage implements OnInit {
+  private updateSubscription: Subscription;
 
   postData:IPost[];
   post:Observable<IPost[]> | null =null ;
@@ -39,9 +40,13 @@ export class PostPage implements OnInit {
        ////transfert data to HomePage
        this.datapost.emit(this.getAllpost());
        console.log(this.activatedRoute.snapshot.params.id);
-  
+
+       this.updateSubscription = interval(5000).subscribe(
+        (val) => { this.getAllpost()
+        });
+   
     }
-  
+
     getAllpost(){
       this.service.getAllpost().subscribe(response => {
         this.postData = response.data ;

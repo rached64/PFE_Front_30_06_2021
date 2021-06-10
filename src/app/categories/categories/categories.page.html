@@ -40,13 +40,13 @@
     <ion-row>
       <ion-col size="6" *ngFor="let categorie of categories">
        
-  <ion-item>
+  <ion-item [routerLink]="['/post-by-categorie',categorie.id]">
     <ion-thumbnail slot="start">
-      <ion-img [src]="categorie.picture" [routerLink]="['/post-by-categorie',categorie.id]"></ion-img>
+      <ion-img [src]="categorie.picture"></ion-img>
     </ion-thumbnail>
     <ion-label>{{categorie.name}}</ion-label>
   </ion-item>
-    
+
 </ion-col>
 </ion-row>
 </ion-grid>

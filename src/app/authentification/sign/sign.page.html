@@ -1,22 +1,23 @@
 <ion-content>
   <ion-list>
-    <ion-radio-group value="biff">
       <ion-list-header>
         <ion-label> <h1> Créer un compte pour ... </h1></ion-label>
       </ion-list-header>
-      <ion-item>
-        <ion-label>Particulier</ion-label>
-        <ion-radio slot="start" value="biff" [routerLink]="['/inscription']"></ion-radio>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label>Mon entreprise</ion-label>
-        <ion-radio slot="start" value="griff" [routerLink]="['/inscription-entreprise']"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
+      <div class="form-check">
+        <input [routerLink]="['/sign-up']" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+        <label class="form-check-label" for="exampleRadios1">
+          Particulier
+        </label>
+      </div>
+      <div class="form-check">
+        <input [routerLink]="['/sign-up-pro']" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Mon entreprise
+        </label>
+      </div>
   </ion-list>
 <div class="about-compte">
   <h4>Vous avez déja un compte ?</h4>
-  <ion-label [routerLink]="['/authentification']">Me connecter</ion-label>
+  <ion-label [routerLink]="['/login']">Me connecter</ion-label>
 </div>
 </ion-content>

@@ -81,11 +81,6 @@ export class AddPostPage implements OnInit {
       console.log(response);
        });
   }
-
-
-
-
-
      //MultiStep
     next(){
       this.step=this.step +1 ;

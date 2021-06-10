@@ -1,66 +1,115 @@
 <ion-content>
+  <div class="container mt-4">
+    <form (ngSubmit)="submit()" [formGroup]="form">
   <h1>  Créaction de compte professionnel</h1>
-  
   <hr>
-  <div class="form">
+     
+      <!--------------- Name ------------->
+      <div class="form-group">
+        <h3>Compte</h3>
+
+        <label for="nom">Nom</label>
+        <input type="text" formControlName="nom" class="form-control" name="nom"
+        placeholder="enter nom" [ngClass]="{'is-invalid':submitted && f.nom.errors}" />
+
+        <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+          <div *ngIf="f.nom.errors.required">
+            Nom obligatoire
+          </div>
+        </div>
+           <!--------------- Email ------------->
+
+    <div class="mb-3">
+        <label  class="form-label">Email address</label>
+        <input type="email" formControlName="email" name="email" class="form-control"  aria-describedby="emailHelp"
+        [ngClass]="{'is-invalid':submitted && f.email.errors}">
+        
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">
+            email obligatoire
+          </div>
+          <div *ngIf="f.email.errors.email">
+           email est invalide !!!!
+          </div>
+      </div>
+    </div>
+     <!--------------- Password ------------->
+     <div class="mb-3">
+        <label  class="form-label">Mot de Passe</label>
+        <input type="password" formControlName="password" name="password" class="form-control"
+        [ngClass]="{'is-invalid':submitted && f.password.errors}">
+
+      <div *ngIf="submitted && f.password.errors " class="invalid-feedback">
+          <div *ngIf="f.password.errors.required ">
+            mot de passe est obligatoire
+          </div>
+
+          <div *ngIf="f.password.errors.minlength">
+            mot de passe invalide ! doit etre plus de 6 caracters
+          </div>
+      </div>
+    </div>
+           <!--------------- Confirme Password ------------->
+
+    <div class="mb-3">
+      <label  class="form-label">Confirmer mot de passe</label>
+      <input type="password" formControlName="confirmPassword" class="form-control" name="confirm_password"
+      [ngClass]="{'is-invalid':submitted && f.confirmPassword.errors}">
+  
+      <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+        <div *ngIf="f.confirmPassword.errors.required">
+          confirmer mot de passe est obligatoire
+        </div>
+        <div *ngIf="f.confirmPassword.errors.mustMatch">
+          mot de passe est invalide
+        </div>
+      </div>
+   </div>
       <h3>Entreprise</h3>
+    <div class="form-group">
+      <label for="SIERT">SIRET</label>
+      <input type="text" formControlName="SIERT" class="form-control" name="SIERT"
+      placeholder="enter SIERT" [ngClass]="{'is-invalid':submitted && f.SIERT.errors}" />
+
+      <div *ngIf="submitted && f.SIERT.errors" class="invalid-feedback">
+        <div *ngIf="f.SIERT.errors.required">
+          SIERT obligatoire
+        </div>
+    </div>
   
-  <ion-item>
-      <ion-label color="dark">SIERT</ion-label>
-      <ion-input color="dark" type="text" ></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label color="dark">Nom de la sociéte </ion-label>
-      <ion-input color="dark" type="text" ></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label>catégorie associée a votre activité </ion-label>
-      <ion-select  class="cat">
-          <ion-select-option value="v">Voiture</ion-select-option>
-        <ion-select-option value="c">Camion</ion-select-option>
-        <ion-select-option value="m">Motos</ion-select-option>
-        <ion-select-option value="n">Nautismes</ion-select-option>
-        <ion-select-option value="EV">Equipement Voiture</ion-select-option>
-        <ion-select-option value="EC">Equipement Camion</ion-select-option>
-        <ion-select-option value="EM">Equipement Motos</ion-select-option>
-        <ion-select-option value="EN">Equipement Nautismes</ion-select-option>
-      </ion-select>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label color="dark">Adresse</ion-label>
-      <ion-input color="dark" type="text" required ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="dark">Télephone</ion-label>
-      <ion-input color="dark" type="text" required ></ion-input>
-    </ion-item>
-    <h3>Compte</h3>
-  
-    <ion-item>
-      <ion-label color="dark">Nom</ion-label>
-      <ion-input color="dark" type="text" required ></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label color="dark">Prénom</ion-label>
-      <ion-input color="dark" type="text" required ></ion-input>
-    </ion-item>
+      <label for="NomSociete">Nom de la Societe</label>
+      <input type="text" formControlName="NomSociete" class="form-control" name="NomSociete"
+      placeholder="enter NomSociete" [ngClass]="{'is-invalid':submitted && f.NomSociete.errors}" />
+
+      <div *ngIf="submitted && f.NomSociete.errors" class="invalid-feedback">
+        <div *ngIf="f.NomSociete.errors.required">
+          NomSociete obligatoire
+        </div>
+    </div>
+   
+      <label for="catActivite">Catégorie associée a votre activité</label>
+      <input type="text" formControlName="catActivite" class="form-control" name="catActivite"
+      placeholder="enter catActivite" [ngClass]="{'is-invalid':submitted && f.catActivite.errors}" />
+
+      <div *ngIf="submitted && f.catActivite.errors" class="invalid-feedback">
+        <div *ngIf="f.catActivite.errors.required">
+          le categorie qui associe a votre Activite obligatoire
+        </div>
+    </div> 
     
-    <ion-item>
-      <ion-label color="dark">Email</ion-label>
-      <ion-input color="dark" type="email" required ></ion-input>
-    </ion-item>
+      <label color="dark">Adresse</label>
+      <input formControlName="Adresse" class="form-control" color="dark" type="text" required />
+
+      <label  color="dark">Télephone</label>
+      <input formControlName="telephone" class="form-control" color="dark" type="text" required />
   
-    <ion-item>
-      <ion-label color="dark">Mot de passe</ion-label>
-      <ion-input color="dark" type="password" required ></ion-input>
-    </ion-item>
-  <br>
-  <ion-button fill="outline" shape="round" expand="block">Crée mon compte professionnel</ion-button>
-  </div>
+      <label color="dark">code Postal</label>
+      <input formControlName="codePostal" class="form-control" type="text" required/> 
   
-  </ion-content>
   
+      <ion-button color="primary" type="submit" fill="outline" shape="round" expand="block">Crée mon compte professionnel</ion-button>
+</div>
+</div>
+</form>
+</div>
+</ion-content>

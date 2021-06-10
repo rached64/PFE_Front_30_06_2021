@@ -16,13 +16,15 @@ email:any;
     { title: 'Messages', url: '/folder/Favorites', icon: 'mail' },
     { title: 'Favoris', url: '/folder/Archived', icon: 'heart' },
     { title: 'Recherche sauvgardees', url: '/folder/Trash', icon: 'notifications' },
-    { title: 'Mon Compte', url: '/folder/Spam', icon: 'person-circle' },
+    { title: 'Mon Compte', url: '/profile', icon: 'person-circle' },
+    { title1:'déconnecter', icon:'log-out'},
+
   ];
   public labels = [
-    {title:'Se connecter', url:'/login'}, 
-    {title:'Information Pratique',url:''},
-    {logout:'se déconnecter', url:''}
-
+    { title: 'Déposer une annonce', url: '/add-post', icon: 'add-circle' },
+    { title: 'Recherche', url: '/search', icon: 'search' },
+    {title:'Se connecter', url:'/login',icon:'log-in'}, 
+    {title:'Inscription', url:'/sign-up',icon:'person-add'}
   ];
   constructor( private router:Router) {}
 //Authentification
@@ -37,5 +39,12 @@ email:any;
   logout(){
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
+  }
+  function(){
+    if(localStorage.getItem('token')==null){
+      return true ;
+    }else{
+      return false ;
+    }
   }
 }
