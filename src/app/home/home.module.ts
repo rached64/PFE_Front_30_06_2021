@@ -9,6 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { PostPage } from '../Posts/post/post.page';
 import { CategoriesPage } from '../categories/categories/categories.page';
+import { AnnoncePage } from '../Posts/annonce/annonce.page';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { CategoriesPage } from '../categories/categories/categories.page';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,PostPage,CategoriesPage]
+  declarations: [HomePage,PostPage,CategoriesPage,AnnoncePage]
 })
 export class HomePageModule {}

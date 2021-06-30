@@ -29,9 +29,9 @@ export class AuthentificationService {
     let host=environment.host ;
     return this.http.get<IuserPro>(host + "/user-profile/"+ token);   
    }
-   updateProfile(id,token):Observable<IuserPro>{
+   updateProfile(token ,id):Observable<IuserPro>{
     let host=environment.host ;
-    return this.http.put<IuserPro>(host + "/updateProfile/"+token ,id);   
+    return this.http.put<IuserPro>(host + "/updateProfile/"+token,id);   
    }
 
 }

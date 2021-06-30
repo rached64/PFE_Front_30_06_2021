@@ -25,9 +25,49 @@
       <ion-label> Price </ion-label>
       <ion-input type="number" name="price" [(ngModel)]="annonce.price" ></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label> Marque </ion-label>
+      <ion-input type="string" name="Marque" [(ngModel)]="annonce.Marque" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Modele </ion-label>
+      <ion-input type="string" name="Modele" [(ngModel)]="annonce.Modele" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Boite De Vitesse </ion-label>
+      <ion-input type="string" name="BoiteDeVitesse" [(ngModel)]="annonce.BoiteDeVitesse" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Annee de Modele </ion-label>
+      <ion-input type="string" name="AnneeModele" [(ngModel)]="annonce.AnneeModele" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>NombreDePortes </ion-label>
+      <ion-input type="string" name="NombreDePortes" [(ngModel)]="annonce.NombreDePortes" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> Nombre de Place </ion-label>
+      <ion-input type="string" name="NombreDePlaces" [(ngModel)]="annonce.NombreDePlaces" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label> PuissanceFiscale </ion-label>
+      <ion-input type="string" name="PuissanceFiscale" [(ngModel)]="annonce.PuissanceFiscale" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label> Kilométrage </ion-label>
+      <ion-input type="string" name="Kilometrage" [(ngModel)]="annonce.Kilometrage" ></ion-input>
+    </ion-item>
     
     <ion-item> 
-     <ion-button type="submit" backButton> Modifier </ion-button>
+     <ion-button type="submit" backButton (click)="showMessage()" > Modifier </ion-button>
     </ion-item>
     </form>
 

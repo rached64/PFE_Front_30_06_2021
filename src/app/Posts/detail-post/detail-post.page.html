@@ -131,12 +131,16 @@
   <ion-row>
     <ion-col col-12 col-lg-4 col-xl-8>
         <ion-card>
-        <img src="assets/images/user3.jpg" class="image">
-        <ion-label> Ahmed hamdi </ion-label><br>
-        <ion-label class="site"> site web : www.supercar.com</ion-label>
+        <img src="assets/images/user3.jpg" class="image"><br>
+        <ion-label> Nom: {{user.nom}} </ion-label><br>
+        <ion-label> Email : {{user.email}}</ion-label><br>
+<div (click)="submit">
+  <ion-label> Numéro SIERT :  {{user.SIERT}}</ion-label>
+
+</div>
         
     <ion-button   expand="full" class="chat"> CHAT</ion-button>
-    <ion-button   expand="full" class="num" type="button" color="primary num">Afficher Numéro</ion-button>
+    <ion-button   expand="full" class="num" type="button" color="primary num">Telephone {{user.telephone}}</ion-button>
 
         </ion-card>
 

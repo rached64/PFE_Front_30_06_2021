@@ -1,0 +1,57 @@
+<ion-header>
+  <meta meta charset=utf-8>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title>{{annonce.title}}</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col col-12 col-lg-8 col-xl-8>
+    
+        <img src="{{annonce.picture}}" class="card-img-top" alt="">
+    
+    <ion-label class="titre">  <strong> {{annonce.title}} </strong> </ion-label>
+        <ion-text>
+          <h1> <strong>{{annonce.price}}  </strong></h1>
+        </ion-text>
+
+    <ion-label class="description">description</ion-label>
+
+      <ion-card>
+            <ion-grid>
+              <ion-row class="desc">
+                {{annonce.description}}
+              </ion-row>
+            </ion-grid>
+      </ion-card>
+</ion-col>
+<ion-col>
+
+<ion-grid  col-12 col-sm btn-lg>
+  <ion-row>
+    <ion-col col-12 col-lg-4 col-xl-8>
+        <ion-card>
+        <img src="assets/images/user3.jpg" class="image"><br>
+        <ion-label> Nom: {{user.nom}} </ion-label><br>
+        <ion-label> Email : {{user.email}}</ion-label><br>
+<div (click)="submit">
+  <ion-label> Numéro SIERT :  {{user.SIERT}}</ion-label>
+
+</div>
+        
+    <ion-button expand="full" class="chat"> CHAT</ion-button>
+    <ion-button expand="full" class="num" type="button" color="primary num">Telephone {{user.telephone}}</ion-button>
+
+        </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+
+</ion-content>

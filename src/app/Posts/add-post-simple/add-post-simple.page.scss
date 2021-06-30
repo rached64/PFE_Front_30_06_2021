@@ -8,3 +8,35 @@ ion-content{
     }
     label{ color:black ;}
 }
+
+//@import "bootstrap";
+
+ion-toolbar {
+    --background: #fe6d17 ;
+    }
+    //@import "bootstrap";
+
+ion-content{
+    --ion-background-color:white; 
+}
+ion-toolbar{
+    --background: #fe6d17 ;
+
+}
+
+.text{
+    color:black ;
+}
+.card-body{
+    color: black;
+    background-color: #fe6d17;
+
+}
+
+
+
+ion-img{
+    position: center;
+    width: 70%;
+    height: 50%;
+}

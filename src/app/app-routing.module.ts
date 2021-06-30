@@ -76,6 +76,27 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'annonce',
+    loadChildren: () => import('./Posts/annonce/annonce.module').then( m => m.AnnoncePageModule)
+  },
+  {
+    path: 'choix',
+    loadChildren: () => import('./posts/choix/choix.module').then( m => m.ChoixPageModule)
+  },
+  {
+    path: 'detaill-annonce/:id',
+    loadChildren: () => import('./posts/detaill-annonce/detaill-annonce.module').then( m => m.DetaillAnnoncePageModule)
+  },
+  {
+    path: 'detaill-equipment/:id',
+    loadChildren: () => import('./posts/detaill-equipment/detaill-equipment.module').then( m => m.DetaillEquipmentPageModule)
+  },
+  {
+    path: 'edit-annonce/:id',
+    loadChildren: () => import('./Posts/edit-annonce/edit-annonce.module').then( m => m.EditAnnoncePageModule)
+  },
+
  /* {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then( m => m.PageNotFoundPageModule)

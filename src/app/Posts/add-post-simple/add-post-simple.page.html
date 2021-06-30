@@ -1,53 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sayara</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Déposer Equipment d'annonce</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>Ajouter Annonce :</h1>
-  <form [formGroup]="form" (ngSubmit)="OnImage">
-    <div class="form-group">
-      <label>titre</label>
-      <input formControlName="title" name="title" type="text" class="form-control" id="title" placeholder="Enter titre de votre annonce">
-    </div>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="insertData()">
 
-    <div class="form-group">
-      <label>Prix</label>
-      <input formControlName="price" type="text" class="form-control" name="price" id="price" placeholder="Price">
-    </div>
-    <!--
-<div>
-    <select class="custom-select" formControlName="category_id">
-      <option selected >categories</option>
-      <option *ngFor="let categorie of categories"  [value]="categorie.name"> {{categorie.name}}</option>
-    </select>
-</div>
---->
-<div class="form-group">
-  <label>category_id</label>
-  <input formControlName="category_id" name="category_id" type="text" class="form-control" id="category_id" placeholder="select">
-</div>
+  <!-----------------------Titre ------------->
+  <ion-item>
+    <ion-label position="floating">Titre </ion-label>
+    <ion-input type="text" id="title" name="title" [(ngModel)]="annonce.title"></ion-input>
 
-    <div class="form-group">
-      <label>Description</label>
-      <input formControlName="description" name="description" type="text" class="form-control" id="description" placeholder="description">
-    </div>
-    <div class="form-group">
-      <input formControlName="user_id" name="user_id" type="text"  id="user_id">
-    </div>
+  </ion-item>
+  <!---------------------------description------------>
+  <ion-item>
+    <ion-label> description </ion-label>
+    <ion-input type="text" name="description"  [(ngModel)]="annonce.description"></ion-input>
+  </ion-item>
+  <!----------------------------------Price-------------------->
+  <ion-item>
+    <ion-label> Price </ion-label>
+    <ion-input type="number" name="price" [(ngModel)]="annonce.price"></ion-input>
+  </ion-item>
+  <!---------------------Catégorie---------------->
+ 
+  <ion-item class="categorie" >
+      <ion-label>Choisissez votre catégorie</ion-label>
+      <ion-select value="category" name="categorie" class="cat" [(ngModel)]="annonce.category">
+        <ion-select-option  *ngFor="let categorie of listCategory" >{{categorie.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
 
-    <div class="custom-file">
-      <input type="file" formControlName="picture" name="picture" class="form-control" id="picture" required (change)="uploadImage($event)" [ngClass]="{'is-invalid':submitted && f.picture.errors}">  <!-- -->
-      <div class="image-preview" *ngIf="imagePreview">
-     <img [src]="imagePreview" alt="">
-      </div>
-      <div *ngIf="submitted && f.picture.errors" class="invalid-feedback">
-        <div *ngIf="f.picture.errors.required">Image is required</div>
-      </div>
-    </div>
+    <br>
+  
+<!---------------------Button---------------->
+<ion-button type="submit" value="add" (click)="showMessage()"  name="add" block  >Ajouter</ion-button>
+</form>
 
-    <button (click)="onSubmit()" type="submit" class="btn btn-primary" expand="block">Ajouter Annonce </button>
-  </form>
 </ion-content>

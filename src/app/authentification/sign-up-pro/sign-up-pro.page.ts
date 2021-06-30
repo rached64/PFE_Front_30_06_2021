@@ -5,6 +5,13 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthentificationService } from 'src/app/services/authentification.service';
 import { MustMatch } from '../confirmed.validator';
 
+declare var numbersonly ;
+
+declare var allLetter ;
+
+declare var alpha ;
+
+
 @Component({
   selector: 'app-sign-up-pro',
   templateUrl: './sign-up-pro.page.html',
@@ -14,6 +21,14 @@ export class SignUpProPage implements OnInit {
   form:FormGroup ;
   submitted=false ;
   data:any ;
+  step:any=1 ;
+  alert:boolean = false
+
+  callFunctionJS(){
+    numbersonly();
+    allLetter();
+    alpha();
+  }
 
   constructor( 
     private formBuilder:FormBuilder,
@@ -84,5 +99,18 @@ export class SignUpProPage implements OnInit {
 
     });
   }
+ //MultiStep
+ next(){
+  this.step=this.step +1 ;
+}
+previous(){
+  this.step=this.step -1 ;
+}
+closeAlert(){
+  this.alert=false ;
+}
+openAlert(){
+  this.alert=false ;
+}
 
 }

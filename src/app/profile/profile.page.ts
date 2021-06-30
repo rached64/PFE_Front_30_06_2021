@@ -23,7 +23,8 @@ token:any ;
 
   constructor(private storage: NativeStorage,
     private router: Router,
-    private userService: AuthentificationService
+    private userService: AuthentificationService,
+    private route:ActivatedRoute, 
     ) { }
 
    ngOnInit():void {
@@ -40,10 +41,11 @@ getProfile(){
 }
 updateProfile(){
   this.token = localStorage.getItem('token');
-    this.userService.updateProfile(this.id,this.token).subscribe(res=>{
+  this.id=this.route.snapshot.paramMap.get('id');
+    this.userService.updateProfile(this.token,this.id).subscribe(res=>{
       console.log(res);
     });
-  
+
 }
   segmentChanged($event){
     console.log('event', $event);

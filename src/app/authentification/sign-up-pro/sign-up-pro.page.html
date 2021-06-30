@@ -1,15 +1,18 @@
 <ion-content>
+  <script src="assets/js/form.js"></script>
+
   <div class="container mt-4">
     <form (ngSubmit)="submit()" [formGroup]="form">
-  <h1>  Créaction de compte professionnel</h1>
+  <h1>  Creation de compte</h1>
   <hr>
      
       <!--------------- Name ------------->
       <div class="form-group">
-        <h3>Compte</h3>
+        <div *ngIf="step == 1">
+          <h3>Compte</h3>
 
         <label for="nom">Nom</label>
-        <input type="text" formControlName="nom" class="form-control" name="nom"
+        <input type="text" onkeypress="return alpha(event)"  formControlName="nom" onkeypress="return /[a-z]/i.test(event.key)" class="form-control" name="nom"
         placeholder="enter nom" [ngClass]="{'is-invalid':submitted && f.nom.errors}" />
 
         <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
@@ -65,10 +68,15 @@
         </div>
       </div>
    </div>
-      <h3>Entreprise</h3>
+   <label  color="dark">Télephone</label>
+   <input onkeypress="return alpha(event)" formControlName="telephone" onkeypress="return numbersonly(event)" class="form-control" color="dark" type="text" required />
+</div>
+<div  *ngIf="step == 2">
+
+      <h3> professionnel (Entreprise)</h3>
     <div class="form-group">
       <label for="SIERT">SIRET</label>
-      <input type="text" formControlName="SIERT" class="form-control" name="SIERT"
+      <input type="text" formControlName="SIERT" onkeypress="return numbersonly(event)" class="form-control" name="SIERT"
       placeholder="enter SIERT" [ngClass]="{'is-invalid':submitted && f.SIERT.errors}" />
 
       <div *ngIf="submitted && f.SIERT.errors" class="invalid-feedback">
@@ -78,7 +86,7 @@
     </div>
   
       <label for="NomSociete">Nom de la Societe</label>
-      <input type="text" formControlName="NomSociete" class="form-control" name="NomSociete"
+      <input type="text" onkeypress="return alpha(event)" formControlName="NomSociete" onkeypress="return /[a-z]/i.test(event.key)"  class="form-control" name="NomSociete"
       placeholder="enter NomSociete" [ngClass]="{'is-invalid':submitted && f.NomSociete.errors}" />
 
       <div *ngIf="submitted && f.NomSociete.errors" class="invalid-feedback">
@@ -88,7 +96,7 @@
     </div>
    
       <label for="catActivite">Catégorie associée a votre activité</label>
-      <input type="text" formControlName="catActivite" class="form-control" name="catActivite"
+      <input type="text" onkeypress="return alpha(event)" formControlName="catActivite" onkeypress="return /[a-z]/i.test(event.key)" class="form-control" name="catActivite"
       placeholder="enter catActivite" [ngClass]="{'is-invalid':submitted && f.catActivite.errors}" />
 
       <div *ngIf="submitted && f.catActivite.errors" class="invalid-feedback">
@@ -100,16 +108,19 @@
       <label color="dark">Adresse</label>
       <input formControlName="Adresse" class="form-control" color="dark" type="text" required />
 
-      <label  color="dark">Télephone</label>
-      <input formControlName="telephone" class="form-control" color="dark" type="text" required />
-  
+    
       <label color="dark">code Postal</label>
-      <input formControlName="codePostal" class="form-control" type="text" required/> 
-  
-  
-      <ion-button color="primary" type="submit" fill="outline" shape="round" expand="block">Crée mon compte professionnel</ion-button>
+      <input onkeypress="return alpha(event)" formControlName="codePostal" onkeypress="return numbersonly(event)" class="form-control" type="text" required/> 
+  </div>
 </div>
 </div>
+
+<ion-button type="button"  *ngIf="step != 1" block (click)="previous()">Previous</ion-button>
+<ion-button type="button" value="next" name="next" block *ngIf="step != 2" (click)="next()">page suivant si vous etes professionnel </ion-button>
+<ion-button color="primary" type="submit" fill="outline" shape="round" expand="block">Crée mon compte professionnel</ion-button>
+
 </form>
 </div>
 </ion-content>
+
+

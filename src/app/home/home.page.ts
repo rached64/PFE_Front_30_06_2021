@@ -10,8 +10,10 @@ export class HomePage implements OnInit {
   status: boolean;
 
   constructor(private http: HttpClient) { }
-    HomeFunction($event) { console.log($event) } ;
+    HomeFunction($event) { console.log($event) } ;  
     HomeCategories($event) { console.log($event) } ;
+    Annonce($event) { console.log($event) } ;
+
   
     ngOnInit():void {}
 

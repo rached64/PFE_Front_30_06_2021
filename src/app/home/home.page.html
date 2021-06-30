@@ -16,7 +16,7 @@
 
 <ion-content>
    <div class="ajouter">
-    <ion-button  [routerLink]="['/add-post']"> Déposer une annonce </ion-button>
+    <ion-button  [routerLink]="['/choix']"> Déposer une annonce </ion-button>
     </div>
 
 <div class="title ion-padding">
@@ -28,7 +28,8 @@
   <p [routerLink]="['/post']">See all</p>
 </div>
  <app-post (dataAnnonce)="HomeFunction($event)"></app-post>
-
+ 
+ <app-annonce (dataAnnonce)="Annonce($event)"></app-annonce>
 
 </ion-content>
 

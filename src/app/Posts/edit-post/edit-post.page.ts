@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { IPost, Post } from 'src/app/Models/posts';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -17,7 +18,9 @@ export class EditPostPage implements OnInit {
     constructor(
       private service:PostsService,
       private route:ActivatedRoute,
-      private router: Router
+      private router: Router,
+      private toastr: ToastrService,
+
    ) {  }
   
     ngOnInit():void {
@@ -35,5 +38,9 @@ export class EditPostPage implements OnInit {
   this.router.navigate(['/'])
       });
     }
+    showMessage(){
+      this.toastr.success('ajouté réussi','véhicule annonce ')
+    }
+  
 
 }

@@ -1,0 +1,159 @@
+*{
+    font-family: Open Sans,sans-serif,Arial;
+}
+ion-col .box1{
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+
+}
+ion-grid{
+    padding-inline-start{
+            --ion-grid-padding : 2% ;
+    }
+    padding-inline-end {
+            --ion-grid-padding: 1% ;
+    }
+
+}
+
+.name{
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.price{
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+ion-label{
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.9rem;
+}
+ion-card{
+            h3{
+                color: black;
+                font-weight: 600;
+                text-align: start;
+            }
+}
+
+ion-grid{
+    ion-row{
+        ion-col{
+            img{
+                border-radius: 80%;
+                height:100px;
+width: 100px;
+        }
+        }
+    }
+}
+
+.button-wrapper .btn {
+    margin-bottom:5px;
+    padding: 2.4rem 1.6rem;
+}
+.chat{
+    --background:#fe6d17 ;
+    justify-content: center;
+    box-sizing: inherit;
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ion-toolbar{
+    --ion-background-color:#fe6d17 ;
+}
+ion-row{
+    display: flex;
+justify-content: center;
+
+}
+ion-text{
+    h1{
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        font-family: GeomanistHinted,sans-serif;
+        margin-left: 10px;
+
+    }
+}
+ion-button{
+    border-radius: 7px;
+
+}
+.num{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.site{
+    margin-left: 11px;
+}
+.titre{
+    font-weight: 700;
+    color: black;
+    font-size: 1.3rem;
+    font-family: GeomanistHinted,sans-serif;
+    margin-top: 10px;
+    display: block;
+    margin-left: 10px;
+
+}
+.info{
+    font-weight: 300;
+    color: #38454c;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-family: GeomanistHinted,sans-serif;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: 10px;
+
+}
+.criteres{
+    font-weight: 700;
+    color: black;
+    font-size: 1.3rem;
+    font-family: GeomanistHinted,sans-serif;
+    margin-top: 30px;
+    display: block;
+    margin-left: 10px;
+}
+.card1{
+    margin-top: 4px;
+}
+.info5{
+    font-size:  1.02rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.box4{
+    font-size:  1.02rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: grey;
+}
+.description{
+    font-weight: 700;
+    color: black;
+    font-size: 1.3rem;
+    font-family: GeomanistHinted,sans-serif;
+    display: block;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.desc{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size:  1.02rem;
+    margin-right: 10px;
+
+}

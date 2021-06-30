@@ -7,11 +7,11 @@ export interface IPost {
     title           :string;     
     description     :string;      
     price           :number;
-    category_id     :ICategories ;
+    category_id     :number ;
     Modele          :string;  
     BoiteDeVitesse  :string;     
     AnneeModele     :number;      
-    Marque          :number;
+    Marque          :string;
     YearOfRegistration:number ;
     TypePost        :string;   
     PuissanceFiscale:string;   
@@ -30,11 +30,11 @@ export class Post implements IPost {
     title           :string;     
     description     :string;      
     price           :number;
-    category_id     :ICategories ;
+    category_id     :number ;
     Modele          :string;  
     BoiteDeVitesse  :string;     
     AnneeModele     :number;      
-    Marque          :number;
+    Marque          :string;
     YearOfRegistration:number ;
     TypePost        :string;   
     PuissanceFiscale:string;   

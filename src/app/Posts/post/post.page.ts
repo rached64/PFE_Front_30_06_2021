@@ -11,7 +11,7 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./post.page.scss'],
 })
 export class PostPage implements OnInit {
-  private updateSubscription: Subscription;
+ // private updateSubscription: Subscription;
 
   postData:IPost[];
   post:Observable<IPost[]> | null =null ;
@@ -41,9 +41,9 @@ export class PostPage implements OnInit {
        this.datapost.emit(this.getAllpost());
        console.log(this.activatedRoute.snapshot.params.id);
 
-       this.updateSubscription = interval(5000).subscribe(
+    /*   this.updateSubscription = interval(5000).subscribe(
         (val) => { this.getAllpost()
-        });
+        });*/
    
     }
 
@@ -71,10 +71,5 @@ export class PostPage implements OnInit {
       this.page = 1;
       this.getAllpost();
     } 
-    
-        
-    
-
-
 
 }

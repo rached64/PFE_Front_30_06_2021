@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-list>
+      <ion-list-header>
+        <ion-label> <h1> déposer une annonce de  ... </h1></ion-label>
+      </ion-list-header>
+      <div class="form-check">
+        <input [routerLink]="['/add-post']" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+        <label class="form-check-label" for="exampleRadios1">
+          véhicule
+        </label>
+      </div>
+      <div class="form-check">
+        <input [routerLink]="['/add-post-simple']" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Equipment de véhicule
+        </label>
+      </div>
+  </ion-list>
+</ion-content>

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Categories, ICategories } from 'src/app/Models/categories';
-import { ICitie } from 'src/app/Models/citie';
 import { Post } from 'src/app/Models/post';
 import { IPost } from 'src/app/Models/posts';
 import { ICountrie } from 'src/app/Models/recherche';
-import { IState } from 'src/app/Models/State';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { PostsService } from 'src/app/services/posts.service';
 import { RechercheService } from 'src/app/services/recherche.service';
@@ -20,8 +18,6 @@ export class RecherchePage implements OnInit {
   categories: ICategories[];
   post :IPost[];
   countries: ICountrie[];
-  states: IState[];
-  cities: ICitie[];
 
 
   constructor(private serviceRecherche:RechercheService,
@@ -33,7 +29,7 @@ export class RecherchePage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.getCountrie();
+   // this.getCountrie();
     this.getAllCat();
   }
   //get prod of cat
@@ -53,7 +49,7 @@ export class RecherchePage implements OnInit {
       console.log(this.categories);  
        });
   }
-  
+  /*
   getCountrie(){
     this.serviceRecherche.getCountrie().subscribe(res=>{
       this.countries= res.data;
@@ -83,5 +79,5 @@ export class RecherchePage implements OnInit {
 
      });
 
-    }
+    }*/
 }
